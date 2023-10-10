@@ -21,4 +21,5 @@ GOOGLE_MAPS_API_KEY=xxxx-xxxxxxxxxxxxxxx
 pip install poetry
 poetry install
 poetry shell
+./main.py --apikey xxx-xxxxxxxxxxxxx --csv ./ODs_SP_Survey.csv
 ```
