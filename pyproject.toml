@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "google-map-dist-matrix"
+version = "0.1.0"
+description = ""
+authors = ["terminaldweller <devi@terminaldweller.com>"]
+readme = "README.md"
+# packages = [{include = "google_map_dist_matrix"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+googlemaps = "^4.10.0"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.6.0"
+pylint = "^3.0.1"
+bandit = "^1.7.5"
+ruff = "^0.0.292"
+black = "^23.9.1"
+types-requests = "^2.31.0.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
