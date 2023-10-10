@@ -7,8 +7,8 @@ ENV PYTHONUNBUFFERED=1 \
     POETRY_HOME="/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1 \
-    PYSETUP_PATH="/devourer" \
-    VENV_PATH="/devourer/.venv"
+    PYSETUP_PATH="/app" \
+    VENV_PATH="/app/.venv"
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
 FROM python-base as builder-base
@@ -28,5 +28,4 @@ FROM python-base as production
 COPY --from=certbuilder /certs/ /certs
 COPY --from=builder-base $VENV_PATH $VENV_PATH
 COPY ./main.py $PYSETUP_PATH/main.py
-WORKDIR $PYSETUP_PATH
-ENTRYPOINT $PYSETUP_PATH/main.py
+ENTRYPOINT ["/app/main.py"]
